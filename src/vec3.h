@@ -83,9 +83,9 @@ public:
     {
         float k = 1.0f / t;
 
-        e[0] += k;
-        e[1] += k;
-        e[2] += k;
+        e[0] *= k;
+        e[1] *= k;
+        e[2] *= k;
 
         return *this;
     }
@@ -152,6 +152,12 @@ inline float dot(const vec3 &v1, const vec3 &v2)
 {
     return v1.x() * v2.x() + v1.y() * v2.y() + v1.z() * v2.z();
 }
+
+inline vec3 operator/(const vec3 &v1, float t)
+{
+    return vec3(v1.x() / t, v1.y() / t, v1.z() / t);
+}
+
 
 inline vec3 cross(const vec3 &v1, const vec3 &v2)
 {

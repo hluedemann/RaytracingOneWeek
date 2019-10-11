@@ -4,7 +4,11 @@ cmake_minimum_required(VERSION 3.14)
 add_executable(raytracing
     "main.cpp"
     "vec3.h"
-    "ray.h" "ray.cpp")
+    "ray.h" "ray.cpp"
+    "hitable.h" "hitable.cpp"
+    "camera.h"
+    "material.h")
+
 
 target_compile_features(raytracing
     PRIVATE
